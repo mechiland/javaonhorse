@@ -1,0 +1,7 @@
+1. Why there is no customized packages?
+
+Because most of the packages makes NO sense. If it has to be resued, please create another library.
+Javaonhorse focusing on Application, not library or framework.
+
+2. Why always re-inventing wheels? why not the proven stable opensource projects cannot
+mingle together provide high performance and high productivity?
