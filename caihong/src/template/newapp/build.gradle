@@ -3,6 +3,7 @@ apply from: System.env['HORSE_HOME'] + '/build.gradle'
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'jetty'
+apply plugin: 'idea'
 
 sourceSets {
   main {

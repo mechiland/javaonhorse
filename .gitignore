@@ -5,3 +5,7 @@ target
 .gradle
 gradle-app.setting
 build
+out
+*.ipr
+*.iml
+*.iws
