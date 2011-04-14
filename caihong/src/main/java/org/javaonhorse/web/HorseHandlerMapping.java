@@ -13,7 +13,7 @@ public class HorseHandlerMapping extends AbstractUrlHandlerMapping {
         String controller = parts[1];
         String action = parts[2];
         String controllerClassName = controller.substring(0, 1).toUpperCase().concat(controller.substring(1)).concat("Controller");
-        controllerClassName = "com.tankcraft.core.web.f." + controllerClassName;
+        controllerClassName = "app.controllers." + controllerClassName;
         return Class.forName(controllerClassName).newInstance();
     }
 
