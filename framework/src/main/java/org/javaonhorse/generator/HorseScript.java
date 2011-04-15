@@ -2,23 +2,41 @@ package org.javaonhorse.generator;
 
 import org.apache.commons.cli.*;
 
+/**
+ * Main entry for horse sciript.
+ *
+ * horse new  -- create new
+ * horse server -- start the server
+ * horse generate controller Welcome index new -- generate controller
+ *
+ */
 public class HorseScript {
 
     public static void main(String[] args) throws Exception {
         Options options = new Options();
-        options.addOption("new", false, "Create a new horse application");
-        options.addOption("t", "tree", false, "Create a new horse application");
         CommandLineParser parser = new PosixParser();
         CommandLine cmd = parser.parse(options, args);
 
-        if (cmd.hasOption("new")) {
-            System.out.println("fuck");
-        } else {
-            HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("horse", options);
+        if (cmd.getArgs().length == 0) {
+            help();
+            return;
         }
-        System.out.println(cmd.getArgs()[0]);
+        String subcommand = cmd.getArgs()[0];
 
+        if ("new".equals(subcommand)) {
+            try {
+                new NewApp(cmd.getArgs()[1]).run();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else {
+            System.out.println("Unknow command: " + subcommand);
+        }
+
+    }
+
+    private static void help() {
+        System.out.println("Usage: \nhorse new APP_PATH [options]");
     }
 
 }
