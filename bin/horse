@@ -1,0 +1,1 @@
+java -classpath $HORSE_HOME/bin/lib/commons-cli-1.2.jar:$HORSE_HOME/bin/lib/commons-io-1.4.jar:$HORSE_HOME/bin/lib/commons-lang-2.4.jar:$HORSE_HOME/bin/lib/generator-0.1-SNAPSHOT.jar org.javaonhorse.generator.HorseScript $@
